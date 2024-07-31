@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta content="width=device-width,initial-scale=1.0" id="vp" name="viewport">
+	<title>页面不存在</title>
+	<link href="/logo-safari.png?v=20170315" id="apple-touch-icon" rel="apple-touch-icon-precomposed"/>
+	<link href="https://www.sogou.com/sug/css/m3.min.v.7.css" rel="stylesheet" type="text/css">
+	<link href="/new/pc/css/weixin-public-new.min.css?v=20180815" rel="stylesheet" type="text/css">
+	<script src="/js/jquery-1.11.0.min.js" charset="gbk" ></script>
+</head>
+<body>
+	<div id="ipad-head" style="display: none">
+		<div id="top">
+			<a href="/" class="i_logo" uigs="search_logo"><img src="/new/pc/images/sousuo_pad.png" width="130"/></a>
+			<div class="querybox">
+				<form name="searchForm" id="searchForm" action="/weixin">
+					<div class="qborder">
+						<input type="hidden" name="type" value="2"/>
+						<input type="text" class="query" name="query" id="query" autocomplete="off"/>
+						<img src="/new/pc/images/reset.png" width="20" height="20" class="qreset2" name="reset" uigs="search_reset" style="display: none;"/>
+						<input type="button" value="搜文章" class="swz" style="right:90px;" onclick="search(this, 2)" uigs="search_article"/>
+						<span class="bai"></span>
+						<input type="button" value="搜公众号" class="swz2" onclick="search(this, 1)" uigs="search_account"/>
+						<input type="hidden" name="ie" value="utf8"/>
+						<input type="hidden" name="_sug_" id="_sug_" value="n"/>
+						<input type="hidden" name="_sug_type_" id="_sug_type_" value=""/>
+						<input type="hidden" name="s_from" value="input"/>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><a id="sogou_xinwen" href="http://news.sogou.com/news?ie=utf8&p=40230447&query=" onclick="navBar(this,'query=');" uigs="nav_xinwen">新闻</a></li>
+				<li><a id="sogou_wangye" href="http://www.sogou.com/web?ie=utf8&query=" onclick="navBar(this,'query=');" uigs="nav_wangye">网页</a></li>
+				<li class="cur"><a href="javascript:void(0)">微信</a></li>
+				<li><a id="sogou_zhihu" href="http://zhihu.sogou.com/zhihu?ie=utf8&p=73351201&query=" onclick="navBar(this,'query=')" uigs="nav_zhihu">知乎</a></li>
+				<li><a id="sogou_tupian" href="http://pic.sogou.com/pics?ie=utf8&p=40230504&query=" onclick="navBar(this,'query=')" uigs="nav_tupian">图片</a></li>
+				<li><a id="sogou_shipin" href="http://v.sogou.com/v?ie=utf8&p=40230608&query=" onclick="navBar(this,'query=')" uigs="nav_shipin">视频</a></li>
+				<li><a id="sogou_mingyi" href="http://mingyi.sogou.com/mingyi?ie=utf8&query=" onclick="navBar(this,'query=')" uigs="nav_mingyi">明医</a></li>
+				<li><a id="sogou_yingwen" href="http://english.sogou.com/english?b_o_e=1&ie=utf8&query=" onclick="navBar(this,'query=')" uigs="nav_yingwen">英文</a></li>
+				<li><a id="sogou_wenwen" href="http://wenwen.sogou.com/s/?ch=weixinsearch&w=" data-index="http://wenwen.sogou.com/?ch=weixinsearch" onclick="navBar(this,'w=')" uigs="nav_wenwen">问问</a></li>
+				<li class="navMore"><a href="http://www.sogou.com/docs/more.htm?v=1" id="top_more" uigs="nav_more">更多<span>&gt;&gt;</span></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="header-box" id="pc-head" style="display: none">
+		<div class="header" id="scroll-header">
+			<a title="回到搜狗首页" href="/" name="scroll-nav" class="logo" uigs="search_logo"></a>
+			<ul class="searchnav" name="scroll-nav">
+				<li><a id="sogou_xinwen" href="http://news.sogou.com/news?ie=utf8&p=40230447&query=" onclick="navBar(this,'query=');" uigs="nav_xinwen">新闻</a></li>
+				<li><a id="sogou_wangye" href="http://www.sogou.com/web?ie=utf8&query=" onclick="navBar(this,'query=');" uigs="nav_wangye">网页</a></li>
+				<li class="cur"><a href="javascript:void(0)">微信</a></li>
+				<li><a id="sogou_zhihu" href="http://zhihu.sogou.com/zhihu?ie=utf8&p=73351201&query=" onclick="navBar(this,'query=')" uigs="nav_zhihu">知乎</a></li>
+				<li><a id="sogou_tupian" href="http://pic.sogou.com/pics?ie=utf8&p=40230504&query=" onclick="navBar(this,'query=')" uigs="nav_tupian">图片</a></li>
+				<li><a id="sogou_shipin" href="http://v.sogou.com/v?ie=utf8&p=40230608&query=" onclick="navBar(this,'query=')" uigs="nav_shipin">视频</a></li>
+				<li><a id="sogou_mingyi" href="http://mingyi.sogou.com/mingyi?ie=utf8&query=" onclick="navBar(this,'query=')" uigs="nav_mingyi">明医</a></li>
+				<li><a id="sogou_yingwen" href="http://english.sogou.com/english?b_o_e=1&ie=utf8&query=" onclick="navBar(this,'query=')" uigs="nav_yingwen">英文</a></li>
+				<li><a id="sogou_wenwen" href="http://wenwen.sogou.com/s/?ch=weixinsearch&w=" data-index="http://wenwen.sogou.com/?ch=weixinsearch" onclick="navBar(this,'w=')" uigs="nav_wenwen">问问</a></li>
+				<li><a id="sogou_xueshu" href="http://scholar.sogou.com/xueshu?ie=utf-8&query=" onclick="navBar(this,'query=')" uigs="nav_xueshu">学术</a></li>
+				<li><a id="top_more" href="http://www.sogou.com/docs/more.htm?v=1" target="_blank" uigs="nav_more">更多>></a></li>
+			</ul>
+			<form name="searchForm" action="/weixin">
+				<div class="querybox">
+					<div class="qborder">
+						<div class="qborder2">
+							<input type="hidden" name="type" id="uptype" value="2"/>
+							<input type="text" class="query" name="query" id="query" autocomplete="off"/>
+							<input type="hidden" name="ie" value="utf8"/>
+							<a href="javascript:void(0)" class="qreset2" name="reset" uigs="search_reset" style="display: none;"></a>
+						</div>
+					</div>
+					<input type="button" value="搜文章" class="swz" onclick="search(this,2)" uigs="search_article"/>
+					<input type="button" value="搜公众号" class="swz2"  onclick="search(this,1)" uigs="search_account"/>
+					<input type="hidden" name="_sug_" id="_sug_" value="n"/>
+					<input type="hidden" name="_sug_type_" id="_sug_type_" value=""/>
+					<input type="hidden" name="s_from" value="input"/>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="wrapper" id="wrapper">
+		<div class="main-left" id="main">
+			<div class="b404-box">
+				<img src="/new/pc/images/bg_404.png" width="217" height="217">
+				<div class="text-info">
+					<p class="p1">呀！</p>
+					<p class="p2">找不到了...</p>
+				</div>
+			</div>
+			<div><iframe scrolling="no" frameborder="0" src="http://yibo.iyiyun.com/Home/Distribute/ad404/key/17812" width="545" height="340" style="display:block;"></iframe></div>
+		</div>
+	</div>
+
+	<div class="footer-box" id="s_footer">
+		<div class="footer">
+			<a id="sogou_webhelp" href="http://help.sogou.com/" target="_blank" uigs="bottom_ssbz">搜索帮助</a>&nbsp;<a href="https://fankui.sogou.com/index.php/web/web/index/type/4" target="_blank" uigs="bottom_yjfk">意见反馈及投诉</a>&nbsp;<script src="/websearch/wexinurlenc_sogou_profile.jsp"></script>&copy;&nbsp;<script type="text/javascript" src="http://www.sogou.com/websearch/features/year.jsp"></script>&nbsp;SOGOU.COM&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.sogou.com/docs/terms.htm" target="_blank" class="g" uigs="bottom_mzsm">免责声明</a>
+		</div>
+	</div>
+
+	<script src="/new/pc/js/404.min.js?v=20180205"></script>
+	<script src="/new/weixin/js/uigs.min.js?v=20180205"></script>
+	<script src="/new/pc/js/log.min.js?v=20170321"></script>
+	<script src="/new/pc/js/search.min.js?v=20161107"></script>
+	<script src="/new/pc/js/suggestion.min.js?v=20180115"></script>
+	<script src="/new/weixin/js/form.min.js?v=20170101"></script>
+	<script>if(window.isIpad){$("#pc-head").remove();$("#ipad-head").show();}</script>
+</body>
+</html>
